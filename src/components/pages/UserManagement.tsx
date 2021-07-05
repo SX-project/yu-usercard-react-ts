@@ -14,7 +14,6 @@ export const UserManagement: VFC = memo(() => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const { onSelectUser, selectedUser } = useSelectUser();
     const { loginUser } = useLoginUser();
-    console.log(loginUser);
 
     useEffect(() => getUsers(), [])
 
@@ -48,6 +47,7 @@ export const UserManagement: VFC = memo(() => {
                 isOpen={isOpen}
                 onClose={onClose}
                 user={selectedUser}
+                isAdmin={loginUser?.isAdmin}
             />
         </>
     )
